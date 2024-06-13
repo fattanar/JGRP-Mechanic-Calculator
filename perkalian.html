@@ -9,10 +9,11 @@
 
     <script>
         function hitungPerkalian() {
-            var totalComponent = parseInt(document.getElementById("totalComponent").value);
+            var jumlahCompoEngine = parseInt(document.getElementById("jumlahCompoEngine").value);
+            var jumlahCompoBody = parseInt(document.getElementById("jumlahCompoBody").value);
             var hargaComponent = 0.55;
 
-            var hasilProfit = totalComponent * hargaComponent;
+            var hasilProfit = (jumlahCompoEngine + jumlahCompoBody) * hargaComponent;
 
             var pembulatan = Math.round(hasilProfit / 10) * 10;
 
@@ -27,16 +28,19 @@
 <body>
     <nav>
         <ul>
-            <li><a href="perkalian.html">Perkalian</a></li>
             <li><a href="index.html">Pembagian</a></li>
+            <li><a href="perkalian.html">Perkalian</a></li>
         </ul>
     </nav>
     <div class="container">
         <div class="wrapper">
             <h2>Perhitungan Perkalian</h2>
             <form>
-                <label for="totalComponent">Total Component yang Digunakan:</label>
-                <input type="number" id="totalComponent" value="0" min="0"><br><br>
+                <label for="jumlahCompoEngine">Component Mesin:</label>
+                <input type="number" id="jumlahCompoEngine" value="0" min="0"><br><br>
+
+                <label for="jumlahCompoBody">Component Body:</label>
+                <input type="number" id="jumlahCompoBody" value="0" min="0"><br><br>
             </form>
         </div>
         <div class="result">
