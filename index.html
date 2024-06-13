@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogjagamers Mechanic Calculator</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        function hitungBiayaDanKeuntungan() {
+            var jumlahComponentMesin = parseInt(document.getElementById("jumlahComponentMesin").value);
+            var jumlahComponentBody = parseInt(document.getElementById("jumlahComponentBody").value);
+            var keuntungan = parseFloat(document.getElementById("keuntungan").value);
+
+            var totalComponent = jumlahComponentMesin + jumlahComponentBody;
+
+            var hasilAkhir = (totalComponent / 2) + keuntungan;
+
+            var pembulatan = Math.round(hasilAkhir / 10) * 10;
+
+            document.getElementById("keuntunganTotal").innerText = "$" + hasilAkhir.toFixed(2);
+            document.getElementById("pembulatan").innerText = "$" + pembulatan.toFixed(2);
+        }
+
+        document.addEventListener("input", hitungBiayaDanKeuntungan);
+    </script>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="perkalian.html">Perkalian</a></li>
+            <li><a href="index.html">Pembagian</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="wrapper">
+            <h2>Perhitungan Pembagian</h2>
+            <form>
+                <label for="jumlahComponentMesin">Component Mesin:</label>
+                <input type="number" id="jumlahComponentMesin" value="0" min="0"><br><br>
+
+                <label for="jumlahComponentBody">Component Body:</label>
+                <input type="number" id="jumlahComponentBody" value="0" min="0"><br><br>
+
+                <label for="keuntungan">Profit:</label>
+                <input type="number" id="keuntungan" value="0" min="0"><br><br>
+            </form>
+        </div>
+        <div class="result">
+            <h3>Hasil:</h3>
+            <div>
+                <div class="large-result"><span id="keuntunganTotal">$0.00</span></div>
+                <div class="small-result">Pembulatan: <span id="pembulatan">$0.00</span></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

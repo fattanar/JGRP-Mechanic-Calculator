@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogjagamers Mechanic Calculator</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        function hitungPerkalian() {
+            var totalComponent = parseInt(document.getElementById("totalComponent").value);
+            var hargaComponent = 0.55;
+
+            var hasilProfit = totalComponent * hargaComponent;
+
+            var pembulatan = Math.round(hasilProfit / 10) * 10;
+
+            document.getElementById("hasilProfit").innerText = "$" + hasilProfit.toFixed(2);
+            document.getElementById("pembulatan").innerText = "$" + pembulatan.toFixed(2);
+        }
+
+        document.addEventListener("input", hitungPerkalian);
+    </script>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="perkalian.html">Perkalian</a></li>
+            <li><a href="index.html">Pembagian</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="wrapper">
+            <h2>Perhitungan Perkalian</h2>
+            <form>
+                <label for="totalComponent">Total Component yang Digunakan:</label>
+                <input type="number" id="totalComponent" value="0" min="0"><br><br>
+            </form>
+        </div>
+        <div class="result">
+            <h3>Hasil:</h3>
+            <div>
+                <div class="large-result"><span id="hasilProfit">$0.00</span></div>
+                <div class="small-result">Pembulatan: <span id="pembulatan">$0.00</span></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
